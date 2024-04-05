@@ -40,7 +40,7 @@ namespace WPF5_TicTacToe.Endpoint
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieDbApp.Endpoint", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Game endpoint", Version = "v1" });
             });
         }
 
@@ -51,7 +51,7 @@ namespace WPF5_TicTacToe.Endpoint
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MovieDbApp.Endpoint v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Game endpoint"));
             }
 
             app.UseExceptionHandler(c => c.Run(async context =>

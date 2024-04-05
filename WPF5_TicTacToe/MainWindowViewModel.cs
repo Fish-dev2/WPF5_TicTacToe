@@ -15,7 +15,9 @@ namespace WPF5_TicTacToe
 {
     internal class MainWindowViewModel : ObservableObject
     {
-        public RestCollection<TicTacToeObject> Table { get; set; }
+        public RestCollection<Game> Table { get; set; }
+        public Game[] TableReal { get; set; }
+
         public char SelectedChar { get; set; }
         public int Pressed { get; set; }
         public static bool IsInDesignMode
@@ -35,12 +37,19 @@ namespace WPF5_TicTacToe
                 return;
             }
             string ip = "http://localhost:5246/";
-            Table = new RestCollection<TicTacToeObject>(ip, "game", "hub");
+            Table = new RestCollection<Game>(ip, "game", "hub");
+            TableReal = new Game[9];
+            int i = 0;
+            foreach (var item in Table)
+            {
+                TableReal[i] = item;
+                i++;
+            }
 
             //commands
             PutLetterCommand = new RelayCommand(() =>
             {
-                Table.Update(new TicTacToeObject()
+                Table.Update(new Game()
                 {
                     coord = Pressed,
                     letter = SelectedChar

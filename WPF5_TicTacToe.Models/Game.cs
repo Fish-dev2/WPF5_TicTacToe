@@ -1,13 +1,13 @@
 ﻿namespace WPF5_TicTacToe.Models
 {
-    public class TicTacToeObject
+    public class Game
     {
-        public TicTacToeObject(int coord, char letter)
+        public Game(int coord, char letter)
         {
             this.coord = coord;
             this.letter = letter;
         }
-        public TicTacToeObject()
+        public Game()
         {
             
         }

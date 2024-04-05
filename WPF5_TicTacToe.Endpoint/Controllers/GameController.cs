@@ -22,30 +22,30 @@ namespace WPF5_TicTacToe.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<TicTacToeObject> ReadAll()
+        public IEnumerable<Game> ReadAll()
         {
-            List<TicTacToeObject> l = new List<TicTacToeObject>();
+            List<Game> l = new List<Game>();
             for (int i = 0; i < this.logic.Table.Count; i++)
             {
-                l.Add(new TicTacToeObject(i, this.logic.Table[i]));
+                l.Add(new Game(i, this.logic.Table[i]));
             }
             return l;
         }
 
         [HttpGet("{id}")]
-        public TicTacToeObject Read(int id)
+        public Game Read(int id)
         {
-            return new TicTacToeObject(id, this.logic.Table[id]);
+            return new Game(id, this.logic.Table[id]);
         }
 
         [HttpPost]
-        public void Create([FromBody] TicTacToeObject value)
+        public void Create([FromBody] Game value)
         {
             throw new NotImplementedException();
         }
 
         [HttpPut]
-        public void Put([FromBody] TicTacToeObject value)
+        public void Put([FromBody] Game value)
         {
             this.logic.PutLetter(value.letter, value.coord);
             this.hub.Clients.All.SendAsync("TableUpdated", value);
@@ -54,7 +54,7 @@ namespace WPF5_TicTacToe.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var coordToDelete = new TicTacToeObject(id, this.logic.Table[id]);
+            var coordToDelete = new Game(id, this.logic.Table[id]);
             this.logic.DeleteCoord(id);
             this.hub.Clients.All.SendAsync("TableDeleted", coordToDelete);
         }
