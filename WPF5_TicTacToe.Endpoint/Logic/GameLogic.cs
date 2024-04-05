@@ -2,12 +2,12 @@
 {
     public class GameLogic
     {
-		private char[] table;
+		private List<char> table;
 
 		//012
 		//345
 		//678
-		public char[] Table
+		public List<char> Table
 		{
 			get { return table; }
 			set { table = value; }
@@ -21,12 +21,9 @@
 		{
 			get
 			{
-				for (int i = 0; i < table.Length; i++)
+				if (table.Contains(' '))
 				{
-					if (table[i] == ' ')
-					{
-						return false;
-					}
+					return false;
 				}
 				return true;
 			}
@@ -48,11 +45,23 @@
 		}
 		public void ResetTable()
 		{
-			table = new char[9];
-			for (int i = 0; i < table.Length; i++)
+			table = new List<char>();
+			for (int i = 0; i < 9; i++)
 			{
-				table[i] = ' ';
+				table.Add(' ');
 			}
+		}
+		public List<char> GetTable()
+		{
+			return table;
+		}
+		public char GetTable(int coord)
+		{
+			return table[coord];
+		}
+		public void DeleteCoord(int coord)
+		{
+			table[coord] = ' ';
 		}
 
 
