@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace WPF5_TicTacToe
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
-        public ICommand PutLetter { get; set; }
+        public ICommand PutLetterCommand { get; set; }
 
         public MainWindowViewModel()
         {
@@ -36,6 +37,13 @@ namespace WPF5_TicTacToe
             Table = new RestCollection<char>(ip, "table", "hub");
 
             //commands
+            PutLetterCommand = new RelayCommand(() =>
+            {
+                Actors.Add(new Actor()
+                {
+                    ActorName = SelectedActor.ActorName
+                });
+            });
 
         }
     }

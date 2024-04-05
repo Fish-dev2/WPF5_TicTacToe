@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF5_TicTacToe", "WPF5_TicTacToe\WPF5_TicTacToe.csproj", "{B8BF0C6B-3C84-4549-91C1-4CE04898979B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF5_TicTacToe", "WPF5_TicTacToe\WPF5_TicTacToe.csproj", "{B8BF0C6B-3C84-4549-91C1-4CE04898979B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF5_TicTacToe.Endpoint", "WPF5_TicTacToe.Endpoint\WPF5_TicTacToe.Endpoint.csproj", "{21F5671F-49DD-443E-A69C-FB8018DC2E3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF5_TicTacToe.Endpoint", "WPF5_TicTacToe.Endpoint\WPF5_TicTacToe.Endpoint.csproj", "{21F5671F-49DD-443E-A69C-FB8018DC2E3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF5_TicTacToe.Models", "WPF5_TicTacToe.Models\WPF5_TicTacToe.Models.csproj", "{C271E008-33BC-4764-92C3-00186E4C0D4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{21F5671F-49DD-443E-A69C-FB8018DC2E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F5671F-49DD-443E-A69C-FB8018DC2E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F5671F-49DD-443E-A69C-FB8018DC2E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C271E008-33BC-4764-92C3-00186E4C0D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C271E008-33BC-4764-92C3-00186E4C0D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C271E008-33BC-4764-92C3-00186E4C0D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C271E008-33BC-4764-92C3-00186E4C0D4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

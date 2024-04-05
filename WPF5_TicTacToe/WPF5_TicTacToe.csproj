@@ -14,4 +14,8 @@
 	<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WPF5_TicTacToe.Models\WPF5_TicTacToe.Models.csproj" />
+  </ItemGroup>
+
 </Project>
