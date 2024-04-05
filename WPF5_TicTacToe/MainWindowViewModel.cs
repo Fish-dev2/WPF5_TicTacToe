@@ -35,7 +35,7 @@ namespace WPF5_TicTacToe
                 return;
             }
             string ip = "http://localhost:5246/";
-            Table = new RestCollection<TicTacToeObject>(ip, "table", "hub");
+            Table = new RestCollection<TicTacToeObject>(ip, "game", "hub");
 
             //commands
             PutLetterCommand = new RelayCommand(() =>

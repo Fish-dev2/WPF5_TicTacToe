@@ -10,12 +10,12 @@ namespace WPF5_TicTacToe.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TableController : ControllerBase
+    public class GameController : ControllerBase
     {
         IGameLogic logic;
         IHubContext<SignalRHub> hub;
 
-        public TableController(IGameLogic logic, IHubContext<SignalRHub> hub)
+        public GameController(IGameLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
             this.hub = hub;
