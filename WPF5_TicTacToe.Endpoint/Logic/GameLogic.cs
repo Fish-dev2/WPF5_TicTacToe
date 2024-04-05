@@ -2,9 +2,12 @@
 {
     public class GameLogic
     {
-		private char[,] table;
+		private char[] table;
 
-		public char[,] Table
+		//012
+		//345
+		//678
+		public char[] Table
 		{
 			get { return table; }
 			set { table = value; }
@@ -12,32 +15,46 @@
 
 		public GameLogic()
 		{
-			table = new char[3, 3]
+			ResetTable();
+		}
+		public bool GameEnd
+		{
+			get
 			{
-				{' ',' ',' ' },
-				{' ',' ',' ' },
-				{' ',' ',' ' },
-			};
+				for (int i = 0; i < table.Length; i++)
+				{
+					if (table[i] == ' ')
+					{
+						return false;
+					}
+				}
+				return true;
+			}
 		}
 
 		//coords 0: sor, coords 1: oszlop
-		public bool PutLetter(char letter, int[] coords)
+		public bool PutLetter(char letter, int coord)
 		{
-			if (coords.Length != 2)
-			{
-				return false;
-			}
 			if (letter != 'X' && letter != 'O')
 			{
 				return false;
 			}
-			if (table[coords[0], coords[1]] != ' ')
+			if (table[coord] != ' ')
 			{
 				return false;
 			}
-			table[coords[0], coords[1]] = letter;
+			table[coord] = letter;
 			return true;
 		}
+		public void ResetTable()
+		{
+			table = new char[9];
+			for (int i = 0; i < table.Length; i++)
+			{
+				table[i] = ' ';
+			}
+		}
+
 
 	}
 }
