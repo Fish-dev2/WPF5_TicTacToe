@@ -29,5 +29,10 @@ namespace WPF5_TicTacToe
         {
             (this.DataContext as MainWindowViewModel).Pressed = int.Parse((sender as Button).Tag.ToString());
         }
+
+        private void SetLetter(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as MainWindowViewModel).SelectedChar = ((sender as RadioButton).Content.ToString())[0];
+        }
     }
 }

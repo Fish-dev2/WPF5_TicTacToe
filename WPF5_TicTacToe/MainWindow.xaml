@@ -15,8 +15,8 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
-            <RadioButton Content="O" FontSize="30" VerticalContentAlignment="Center" Padding="20"/>
-            <RadioButton Content="X" FontSize="30" VerticalContentAlignment="Center" Padding="20"/>
+            <RadioButton Checked="SetLetter" Content="O" FontSize="30" VerticalContentAlignment="Center" Padding="20"/>
+            <RadioButton Checked="SetLetter" Content="X" FontSize="30" VerticalContentAlignment="Center" Padding="20"/>
         </StackPanel>
         <Grid Grid.Column="0" Margin="50" ShowGridLines="True">
             <Grid.ColumnDefinitions>

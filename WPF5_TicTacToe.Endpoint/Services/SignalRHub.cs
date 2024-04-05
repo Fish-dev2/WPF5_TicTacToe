@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Threading.Tasks;
+
 namespace WPF5_TicTacToe.Endpoint.Services
 {
     public class SignalRHub : Hub
