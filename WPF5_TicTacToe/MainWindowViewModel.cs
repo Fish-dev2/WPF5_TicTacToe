@@ -38,17 +38,11 @@ namespace WPF5_TicTacToe
             }
             string ip = "http://localhost:5246/";
             Table = new RestCollection<Game>(ip, "game", "hub");
-            TableReal = new Game[9];
-            int i = 0;
-            foreach (var item in Table)
-            {
-                TableReal[i] = item;
-                i++;
-            }
 
             //commands
             PutLetterCommand = new RelayCommand(() =>
             {
+                OnPropertyChanged();
                 Table.Update(new Game()
                 {
                     coord = Pressed,

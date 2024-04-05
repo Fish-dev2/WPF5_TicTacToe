@@ -275,7 +275,7 @@ namespace WPF5_TicTacToe
 
     }
 
-    public class RestCollection<T> : INotifyCollectionChanged, IEnumerable<T>
+    public class RestCollection<T> : INotifyCollectionChanged, IEnumerable<T> where T : new()
     {
         public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
@@ -284,6 +284,33 @@ namespace WPF5_TicTacToe
         List<T> items;
         bool hasSignalR;
         Type type = typeof(T);
+
+        public T this[int index]
+        {
+            get
+            {
+                if (items == null || items.Count == 0)
+                {
+                    items = new List<T>();
+                    return new T();
+                }
+                if (index < 0 || index >= items.Count)
+                {
+                    throw new IndexOutOfRangeException($"Index {index} is out of range.");
+                }
+
+                return items[index];
+            }
+            set
+            {
+                if (index < 0 || index >= items.Count)
+                {
+                    throw new IndexOutOfRangeException($"Index {index} is out of range.");
+                }
+
+                items[index] = value;
+            }
+        }
 
         public RestCollection(string baseurl, string endpoint, string hub = null)
         {
