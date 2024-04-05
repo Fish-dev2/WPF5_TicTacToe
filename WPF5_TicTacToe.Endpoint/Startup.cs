@@ -33,7 +33,7 @@ namespace WPF5_TicTacToe.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddTransient<IGameLogic, GameLogic>();
+            services.AddSingleton<IGameLogic, GameLogic>();
 
             services.AddSignalR();
 

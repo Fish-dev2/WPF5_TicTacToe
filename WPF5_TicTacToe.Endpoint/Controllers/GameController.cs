@@ -54,9 +54,9 @@ namespace WPF5_TicTacToe.Endpoint.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var actorToDelete = new TicTacToeObject(id, this.logic.Table[id]);
+            var coordToDelete = new TicTacToeObject(id, this.logic.Table[id]);
             this.logic.DeleteCoord(id);
-            this.hub.Clients.All.SendAsync("ActorDeleted", actorToDelete);
+            this.hub.Clients.All.SendAsync("TableDeleted", coordToDelete);
         }
     }
 }
