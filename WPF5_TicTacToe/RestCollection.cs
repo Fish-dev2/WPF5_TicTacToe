@@ -6,18 +6,17 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace WPF5_TicTacToe
 {
-    public class RestCollection
+    public class RestService
     {
         HttpClient client;
 
-        public RestCollection(string baseurl, string pingableEndpoint = "swagger")
+        public RestService(string baseurl, string pingableEndpoint = "swagger")
         {
             bool isOk = false;
             do
@@ -276,20 +275,20 @@ namespace WPF5_TicTacToe
 
     }
 
-    public class RestService<T> : INotifyCollectionChanged, IEnumerable<T>
+    public class RestCollection<T> : INotifyCollectionChanged, IEnumerable<T>
     {
         public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
         NotifyService notify;
-        RestCollection rest;
+        RestService rest;
         List<T> items;
         bool hasSignalR;
         Type type = typeof(T);
 
-        public RestService(string baseurl, string endpoint, string hub = null)
+        public RestCollection(string baseurl, string endpoint, string hub = null)
         {
             hasSignalR = hub != null;
-            this.rest = new RestCollection(baseurl, endpoint);
+            this.rest = new RestService(baseurl, endpoint);
             if (hub != null)
             {
                 this.notify = new NotifyService(baseurl + hub);

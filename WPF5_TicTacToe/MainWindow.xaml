@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:WPF5_TicTacToe"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -26,15 +29,15 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="2" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="0" Background="White" Click="Button_Click" Grid.Row="0" Grid.Column="0" Content="{Binding Path=Table[0]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="1" Background="White" Grid.Row="0" Grid.Column="1" Content="{Binding Path=Table[1]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="2" Background="White" Grid.Row="0" Grid.Column="2" Content="{Binding Path=Table[2]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="3" Background="White" Grid.Row="1" Grid.Column="0" Content="{Binding Path=Table[3]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="4" Background="White" Grid.Row="1" Grid.Column="1" Content="{Binding Path=Table[4]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="5" Background="White" Grid.Row="1" Grid.Column="2" Content="{Binding Path=Table[5]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="6" Background="White" Grid.Row="2" Grid.Column="0" Content="{Binding Path=Table[6]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="7" Background="White" Grid.Row="2" Grid.Column="1" Content="{Binding Path=Table[7]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Tag="8" Background="White" Grid.Row="2" Grid.Column="2" Content="{Binding Path=Table[8]}" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>

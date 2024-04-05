@@ -24,5 +24,10 @@ namespace WPF5_TicTacToe
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as MainWindowViewModel).Pressed = int.Parse((sender as Button).Tag.ToString());
+        }
     }
 }
