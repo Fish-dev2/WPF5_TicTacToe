@@ -26,7 +26,15 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Margin="10"/>
+            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="X" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>
